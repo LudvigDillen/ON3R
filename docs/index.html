@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sparse–View Localization via Online Neural 3D Regression</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> <!-- TODO: Create and add favicon -->
+    <link rel="stylesheet" href="static/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script type="module" src="static/js/model-viewer.min.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container is-max-desktop">
+        <div class="hero-body has-text-centered pb-4">
+          <h1 class="title is-1">Sparse–View Localization via Online Neural 3D Regression</h1>
+          <div class="is-size-5">
+            <!-- TODO: Update authors and links to their respective websites -->
+            <a href="#" target="_blank">Ludvig Dillén</a>,
+            <a href="#" target="_blank">Magnus Oskarsson</a>,
+            <a href="#" target="_blank">Viktor Larsson</a>
+          </div>
+          <div class="is-size-5">
+            Lund University
+            <br>
+            CVPR 2026
+          </div>
+
+          <div class="buttons is-centered pt-4">
+            <!-- TODO: Update link to paper later when I have one
+            <a href="#" target="_blank" class="button is-medium is-dark is-rounded is-responsive">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+            -->
+            <a href="https://github.com/ludvigdillen/ON3R" target="_blank" class="button is-medium is-dark is-rounded is-responsive">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+            <!-- TODO: Update link to arXiv if I later have it
+            <a href="#" target="_blank" class="button is-medium is-dark is-rounded is-responsive"> 
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video autoplay controls height="100%">
+            <source src="static/videos/4873122-hd_1280_720_25fps.mp4" type="video/mp4"> <!-- TODO: Change the video -->
+          </video>
+          <h5 class="subtitle is-5 has-text-centered">
+            <!-- TODO: Update description -->
+            Nullam cursus bibendum venenatis. Integer dictum justo a lorem cursus, non tempor ante scelerisque. Praesent feugiat consectetur gravida. Pellentesque tristique elementum mi, ut dapibus arcu laoreet id. Nam tincidunt mauris ante, ac gravida neque dapibus.
+          </h5>
+          <p class="has-text-centered is-size-7 mt-1">
+            Video by Tima Miroshnichenko: https://www.pexels.com/video/a-man-crumbling-used-papers-with-errors-4873122/ <!-- TODO: Remove -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="hero-body has-text-centered">
+          <p class="title">Abstract</p>
+          <div class="content has-text-justified">
+            We present ON3R, an online-trained neural regressor addressing sparse-view structureless localization, where database images have limited visual overlap and no prebuilt 3D map. Given any sparse matches between a query and a $K$-tuple of posed database views, ON3R predicts 3D coordinates for matched query keypoints, supervised by database reprojection residuals and a monocular depth prior. Afterwards, the absolute pose of the query is estimated via P3P-RANSAC and refined with lightweight bundle adjustment. Across MegaDepth, Cambridge Landmarks, and a sparsified version of Aachen Day-Night, ON3R outperforms existing methods. ON3R is particularly effective when the data is extremely sparse -- we focus on $K\!\leq\!10$ database images.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title">Carousel</h2>
+          <div id="image-carousel" class="carousel is-clipped">
+            <div class="item">
+              <img src="static/images/pexels-kindelmedia-7054757.jpg"/> <!-- TODO: Change the image -->
+              <h5 class="subtitle is-5 has-text-centered">
+                <!-- TODO: Update description -->
+                Integer porta maximus fringilla. Phasellus semper dolor id laoreet condimentum. In nisl lacus, finibus nec magna vitae, tempor molestie neque. Fusce porta lorem at lacus eleifend, vitae convallis metus consequat. Nullam convallis vitae ligula sit amet porta. Morbi est diam.
+              </h5>
+              <p class="has-text-centered is-size-7 mt-1">
+                Photo by Kindel Media: https://www.pexels.com/photo/a-close-up-shot-of-paper-clipped-documents-7054757/ <!-- TODO: Remove -->
+              </p>
+            </div>
+            <div class="item">
+              <img src="static/images/pexels-cottonbro-4778611.jpg"/> <!-- TODO: Change the image -->
+              <h5 class="subtitle is-5 has-text-centered">
+                <!-- TODO: Update description -->
+                Nam et turpis rutrum, euismod odio et, tempus dolor. Cras ultrices congue felis, eget convallis risus dictum id. Maecenas semper vulputate felis. Integer vulputate lorem ut erat ornare, et ornare mauris egestas. Nullam at efficitur.
+              </h5>
+              <p class="has-text-centered is-size-7 mt-1">
+                Photo by cottonbro studio: https://www.pexels.com/photo/white-ceramic-mug-on-white-paper-4778611/ <!-- TODO: Remove -->
+              </p>
+            </div>
+            <div class="item">
+              <img src="static/images/pexels-ron-lach-8086364.jpg"/> <!-- TODO: Change the image -->
+              <h5 class="subtitle is-5 has-text-centered">
+                <!-- TODO: Update description -->
+                Maecenas dignissim porttitor ligula, a volutpat nulla pellentesque vitae. Suspendisse eget neque bibendum, sagittis purus in, sagittis nisl. Sed sed erat dignissim, feugiat ligula in, rutrum mi. Vestibulum lectus lacus, bibendum a varius eget, eleifend non ex. In aliquet orci.
+              </h5>
+              <p class="has-text-centered is-size-7 mt-1">
+                Photo by Ron Lach : https://www.pexels.com/photo/tired-woman-sleeping-on-desk-8086364/ <!-- TODO: Remove -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title">3D model</h2>
+          <model-viewer src="static/3d/Desk.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="static/images/Desk.webp" shadow-intensity="1"> </model-viewer> <!-- TODO: Change the model -->
+          <p class="has-text-centered is-size-7 mt-1">
+            <a href="https://poly.pizza/m/EtJlOllzbf" target="_blank">Desk</a> by <a href="https://poly.pizza/u/dook" target="_blank">dook</a> [<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC-BY</a>] via Poly Pizza <!-- TODO: Remove -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: Add the poster later when I have it
+    <section class="hero is-light">
+      <div class="container">
+        <div class="hero-body">
+          <p class="title">Poster</p>
+          <div class="content poster">
+            <embed src="static/pdf/dummy.pdf" type="application/pdf">
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <section class="section" id="bibtex">
+      <div class="container is-max-desktop">
+        <h2 class="title">BibTeX</h2>
+        <pre class="is-relative">
+          <code id="bibtex-code">@inproceedings{dillen2026on3r,
+            title={{Sparse–View Localization via Online Neural 3D Regression}},
+            author={Dillén, Ludvig and Oskarsson, Magnus and Larsson, Viktor},
+            booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+            year={2026}
+            }</code>
+          <button class="button is-absolute clipboard-button is-pulled-right m-2" onclick="copyToClipboard('#bibtex-code')">
+            <span class="icon is-small">
+              <i class="fas fa-copy"></i>
+            </span>
+          </button>
+        </pre>
+      </div>
+    </section>
+  </body>
+
+  <script type="text/javascript">
+    function copyToClipboard(elemId) {
+        let elem = document.querySelector(elemId);
+        navigator.clipboard.writeText(elem.innerText);
+    }
+
+    bulmaCarousel.attach('#image-carousel', {
+      pagination: false,
+      loop: true,
+      infinite: true,
+      autoplay: true,
+    });
+  </script>
+</html>
