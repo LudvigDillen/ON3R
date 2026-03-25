@@ -1,0 +1,9 @@
+Credits to
+Kendall, Alex, Matthew Grimes, and Roberto Cipolla. "Posenet: A convolutional network for real-time 6-dof camera relocalization." Proceedings of the IEEE international conference on computer vision. 2015.
+for the images in
+ex1/ (the images are query = KingsCollege/seq1/frame00261.png, ref0 = KingsCollege/seq1/frame00217.png, ref1 = KingsCollege/seq1/frame00104.png)
+ex2/ (the images are query = ShopFacade/seq1/frame00015.png, ref0 = ShopFacade/seq1/frame00001.png, ref1 = ShopFacade/seq1/frame00026.png)
+
+and to 
+Li, Zhengqi, and Noah Snavely. "Megadepth: Learning single-view depth prediction from internet photos." Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.
+for the photos in the teaser image.
