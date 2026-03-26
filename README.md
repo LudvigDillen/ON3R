@@ -28,7 +28,7 @@ git submodule update --init --recursive locba MoGe
 #### Install
 Test install has been tested on Ubuntu.
 ```bash
-mamba create -n on3r -c conda-forge python=3.10 pip poetry cmake ninja cxx-compiler **opencv** -y
+mamba create -n on3r -c conda-forge python=3.10 pip poetry cmake ninja cxx-compiler -y
 mamba activate on3r
 
 # avoid the ~/.local poetry-core conflict
@@ -46,6 +46,8 @@ git submodule update --init --recursive reloc3r vggt ace
 git -C reloc3r submodule update --init --recursive
 poetry install --no-root --with baselines
 pip install --no-deps -e vggt
+# ACE's C++ extension requires OpenCV headers/libraries
+mamba install -c conda-forge opencv -y
 pip install --no-build-isolation ace/dsacstar
 
 # RoMa dense matching
