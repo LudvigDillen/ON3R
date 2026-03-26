@@ -1,0 +1,86 @@
+# THIS CONFIG IS SHARED BETWEEN ALL DATASETS AND TUPLE LENGTHS
+data:
+    name: megadepth
+    preprocessing:
+        resize: 1024
+        side: long
+        square_pad: True
+    train_split: train_scenes_clean.txt
+    val_samples: 300
+    val_split: valid_scenes_clean.txt
+    val_pairs: valid_pairs.txt
+    min_overlap: 0.05
+    max_overlap: 0.30
+    read_depth: false
+    read_image: true
+    batch_size: 1
+    num_workers: 8
+    load_features:  # NOTE: set do false if doing timings
+        do: true  # enable this if you have cached predictions
+        path: exports/megadepth-undist-depth-r1024_SP-k2048-nms3/{scene}.h5
+        padding_length: 2048
+        padding_fn: pad_local_features
+    tuples:
+        tuple_length: 2
+        difficulty: "star-topology"
+model:
+    name: tuple_pipeline
+    extractor:
+        name: gluefactory_nonfree.superpoint
+        max_num_keypoints: 2048
+        force_num_keypoints: True
+        detection_threshold: 0.0
+        nms_radius: 3
+        trainable: False
+    matcher:
+        name: matchers.lightglue  # matchers.lightglue or matchers.nearest_neighbor_matcher
+        filter_threshold: 0.20
+        flash: true
+        weights: superpoint  # (superpoint, disk, aliked, sift)
+        checkpointed: true  # true gives less memory usage but slower execution (has to recompute stuff as it is not stored in memory)
+        on3r:
+            tuning_stats: True
+            stats_file: 'outputs/stats/on3r_tuning.txt'
+            stats_file_transitive: 'outputs/stats/transitive_matching.txt'
+            stats_file_motion_averaging: 'outputs/stats/motion_averaging.txt'
+            stats_file_vggt: 'outputs/stats/vggt.txt'
+            stats_file_reloc3r: 'outputs/stats/reloc3r.txt'
+            stats_file_ace: 'outputs/stats/ace.txt'
+            run_baselines: False
+            plot: False
+            hyperparameters:
+                lr_start: 0.0005
+                performance_mode: "speed"  # "speed" or "low_error"
+                max_epochs: 500
+                positional_encoding_frequencies: 5  # 5
+                cauchy_scaler: 1.0
+                s_max: 100.0  # max cauchy_scaler
+                use_moge2_depth: True
+                moge2_depth_loss_scaler: 0.10
+                s_min_depth: 50.0
+                s_scaler_depth: 5.0
+                normalize_poses:
+                    mean: False
+                    median: True
+                    scale: False
+                    bias_scale: 10.0  # set to False to not use
+            network:
+                hidden_dims: 512
+                n_layers: 5
+            pipeline:
+                bundle_adjust: True
+                roma:
+                    use: False
+                    num_samples: 1000
+                    build_tracks: True
+                    # naive (called "Greedy merging" in paper), good_naive (called "with Sampson error"), lp (not in paper)
+                    tracks_method: "good_naive"
+                    run_tests: False
+                    resample: False
+                    plot: False
+            baselines:
+                transitive_matching:
+                    mode: "type1+"  # "type1+" or "type2+"
+            experiment:
+                timings:
+                    out_folder: 'outputs/stats'
