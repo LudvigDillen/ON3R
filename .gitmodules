@@ -1,18 +1,18 @@
 [submodule "locba"]
 	path = locba
-	url = https://github.com/LudvigDillen/locba.git
+	url = https://github.com/LudvigDillen/locba
 [submodule "ace"]
 	path = ace
 	url = https://github.com/nianticlabs/ace
 [submodule "reloc3r"]
 	path = reloc3r
-	url = https://github.com/ffrivera0/reloc3r.git
+	url = https://github.com/ffrivera0/reloc3r
 [submodule "RoMa"]
 	path = RoMa
-	url = https://github.com/Parskatt/RoMa.git
+	url = https://github.com/Parskatt/RoMa
 [submodule "vggt"]
 	path = vggt
-	url = https://github.com/facebookresearch/vggt.git
+	url = https://github.com/facebookresearch/vggt
 [submodule "MoGe"]
 	path = MoGe
-	url = https://github.com/microsoft/MoGe.git
+	url = https://github.com/microsoft/MoGe
