@@ -65,6 +65,7 @@ def run_ace(data, batch_i, workdir=Path(__file__).parents[3] / "ace_scenes"):
         batch_size=5120,
     )
     trainer = TrainerACE(opts)
+    trainer.num_data_loader_workers = 0
     trainer.train()
     del trainer
     gc.collect()
