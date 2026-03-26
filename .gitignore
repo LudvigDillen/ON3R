@@ -1,0 +1,15 @@
+.venv
+/build/
+*.egg-info
+*.pyc
+/.idea/
+/venv/
+/data/
+/outputs/
+__pycache__
+gluefactory/configs/
+tmp/
+gluefactory/baselines/transitive_matching/tmp/
+assets/
+assets_old/
+ace_scenes/

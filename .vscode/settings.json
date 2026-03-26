@@ -1,0 +1,41 @@
+{
+  "files.watcherExclude": {
+    "**/assets/**": true,
+    "**/build/**": true,
+    "**/__pycache__/**": true,
+    "**/.git/**": true,
+    "**/*.egg-info/**": true,
+    "**/pybind11/**": true
+  },
+  "files.exclude": {
+    "**/assets": true,
+    "**/build": true,
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "**/assets": true,
+    "**/build": true,
+    "**/__pycache__": true
+  },
+  "search.useIgnoreFiles": true,
+  "python.analysis.exclude": [
+    "**/assets/**",
+    "**/build/**",
+    "**/__pycache__/**",
+    "**/MoGe/**",
+    "**/RoMa/**",
+    "**/vggt/**",
+    "**/locba/**",
+    "**/Hierarchical-Localization/**",
+    "**/reloc3r/**",
+    "**/ace/**",
+    "**/external/**",
+    "**/outputs/**",
+    "**/assets_old/**",
+  ],
+  "C_Cpp.files.exclude": {
+    "**/assets/**": true,
+    "**/build/**": true
+  },
+  "C_Cpp.semanticHighlighting.enabled": false
+}
