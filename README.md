@@ -158,7 +158,7 @@ Also consider citing LightGlue, SuperPoint, and HLOC.
 The core code of this repository is licensed under the MIT License.
 
 This project builds upon:
-- glue-factory (Apache 2.0)
+- glue-factory (Apache 2.0) (see special license for SuperPoint)
 - Hierarchical-Localization (Apache 2.0)
 
 ### Third-party components (optional)
