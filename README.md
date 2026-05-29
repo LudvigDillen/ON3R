@@ -5,7 +5,7 @@
   <br /> <strong>Regressing 2D-3D correspondences with ON3R.</strong> ON3R estimates the absolute pose of a query image by comparing it to <em>K</em> posed database images and remains robust even when the database images have little or no mutual overlap (i.e., <em>star-topology</em> data). As input, ON3R takes sparse matches (no visual features) between the query and each database image. For every matched query keypoint, ON3R regresses a 3D point by training a compact MLP on-the-fly, supervised by reprojection errors and a monocular depth prior. The resulting 2D–3D matches are then used to estimate the absolute pose, which, together with the regressed 3D points, is refined with lightweight bundle adjustment.
 </p>
 
-[[Paper PDF (coming later with Conference Proceedings)]](link) | [[Project Page]](https://ludvigdillen.github.io/ON3R/)
+[[Paper]](https://openaccess.thecvf.com//content/CVPR2026/papers/Dillen_Sparse-View_Localization_via_Online_Neural_3D_Regression_CVPR_2026_paper.pdf) | [[Project Page]](https://ludvigdillen.github.io/ON3R/) | [[Poster]](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/37203.png?t=1779176476.8928816) | [[Video]](https://www.youtube.com/watch?v=TGc1dTexHQA) 
 
 ---
 ## 🚀 Quickstart
